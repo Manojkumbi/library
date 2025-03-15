@@ -1,0 +1,7 @@
+com\library\management\repository\BookRepository.class
+com\library\management\LibraryManagementApplication.class
+com\library\management\repository\BookRepository$1.class
+com\library\management\controller\BookController.class
+com\library\management\controller\StudentController.class
+com\library\management\model\Book.class
+com\library\management\service\BookService.class

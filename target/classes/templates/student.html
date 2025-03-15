@@ -1,0 +1,91 @@
+<!-- student.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Portal - Student View</title>
+    <link rel="stylesheet" href="/css/student-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Library Portal</h1>
+                <div class="user-info">
+                    <span id="studentName">Welcome, Student</span>
+                    <button id="logoutBtn" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active" onclick="showSection('catalog')">Book Catalog</a></li>
+                    <li><a href="#" onclick="showSection('borrowed')">My Borrowed Books</a></li>
+                    <li><a href="#" onclick="showSection('history')">Borrowing History</a></li>
+                </ul>
+            </nav>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search by title, author, or ISBN...">
+                <div class="filter-container">
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="non-fiction">Non-Fiction</option>
+                        <option value="science">Science</option>
+                        <option value="history">History</option>
+                        <option value="technology">Technology</option>
+                    </select>
+                    <select id="availabilityFilter">
+                        <option value="">All Books</option>
+                        <option value="available">Available Only</option>
+                    </select>
+                </div>
+                <button onclick="searchBooks()">Search</button>
+            </div>
+        </header>
+
+        <main>
+            <!-- Book Catalog Section -->
+            <section id="catalog" class="active-section">
+                <h2>Book Catalog</h2>
+                <div class="books-grid" id="booksCatalog">
+                    <!-- Books will be loaded here -->
+                </div>
+                <div class="pagination">
+                    <button id="prevPage" onclick="changePage(-1)">Previous</button>
+                    <span id="pageInfo">Page 1 of 1</span>
+                    <button id="nextPage" onclick="changePage(1)">Next</button>
+                </div>
+            </section>
+
+            <!-- Borrowed Books Section -->
+            <section id="borrowed" class="hidden-section">
+                <h2>My Borrowed Books</h2>
+                <div class="books-list" id="borrowedBooks">
+                    <!-- Borrowed books will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Borrowing History Section -->
+            <section id="history" class="hidden-section">
+                <h2>Borrowing History</h2>
+                <div class="history-list" id="borrowingHistory">
+                    <!-- Borrowing history will be loaded here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Book Details Modal -->
+        <div id="bookModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="bookDetails">
+                    <!-- Book details will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/student-script.js"></script>
+</body>
+</html>
